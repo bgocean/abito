@@ -136,22 +136,26 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.content-main__list-item--img{
-
+.content-main__list-item--img {
+  width: 100%;
 }
 
-.content-main__list-item--title{
-
+.content-main__list-item--title {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgb(37, 110, 235);
 }
 
-.content-main__list-item--price{
-  
+.content-main__list-item--price {
 }
 
-.content-main__list-item--desc{
-
+.content-main__list-item--desc {
 }
 
 .content-side {
