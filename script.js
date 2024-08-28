@@ -5,49 +5,49 @@ const cardWrapper = document.querySelector(".content-main__list");
 const cardArray = [
   {
     id: 0,
+    title: "Первый товар",
     img: "./image/card-img.png",
-    title: "Пвх материал 2й сорт",
     price: "170 ₽",
     date: "10 июля 11:39",
     desc: "Казань, р-н Вахитовский",
   },
   {
     id: 1,
+    title: "Второй товар",
     img: "./image/card-img.png",
-    title: "Пвх материал 2й сорт",
-    price: "170 ₽",
+    price: "171 ₽",
     date: "10 июля 11:39",
     desc: "Казань, р-н Вахитовский",
   },
   {
     id: 2,
+    title: "Третий товар",
     img: "./image/card-img.png",
-    title: "Пвх материал 2й сорт",
-    price: "170 ₽",
+    price: "172 ₽",
     date: "10 июля 11:39",
     desc: "Казань, р-н Вахитовский",
   },
   {
     id: 3,
+    title: "Четвертый товар",
     img: "./image/card-img.png",
-    title: "Пвх материал 2й сорт",
-    price: "170 ₽",
+    price: "173 ₽",
     date: "10 июля 11:39",
     desc: "Казань, р-н Вахитовский",
   },
   {
     id: 4,
+    title: "Пятый товар",
     img: "./image/card-img.png",
-    title: "Пвх материал 2й сорт",
-    price: "170 ₽",
+    price: "174 ₽",
     date: "10 июля 11:39",
     desc: "Казань, р-н Вахитовский",
   },
   {
     id: 5,
+    title: "Шестой товар",
     img: "./image/card-img.png",
-    title: "Пвх материал 2й сорт",
-    price: "170 ₽",
+    price: "175 ₽",
     date: "10 июля 11:39",
     desc: "Казань, р-н Вахитовский",
   },
@@ -55,7 +55,7 @@ const cardArray = [
 
 const render = (cardList) => {
   cardWrapper.innerHTML = "";
-  cardList.forEach((item, idx) => {
+  cardList.forEach((item) => {
     cardWrapper.insertAdjacentHTML(
       "beforeend",
       `  
@@ -81,6 +81,15 @@ const render = (cardList) => {
   });
 };
 
+const filteredArray = (array, value) => {
+  console.log(array);
+  console.log(value);
+
+  return array.filter((item) => {
+    return item.title.includes(value) || item.price.includes(value);
+  });
+};
+
 cardWrapper.style.justifyContent = "flex-start";
 // cardWrapper.style.rowGap = "normal";
 cardWrapper.style.gap = "30px";
@@ -88,5 +97,5 @@ cardWrapper.style.gap = "30px";
 render(cardArray);
 
 searchBtn.addEventListener("click", () => {
-  console.log(searchInput.value);
+  render(filteredArray(cardArray, searchInput.value));
 });
